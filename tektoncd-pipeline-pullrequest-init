@@ -1,0 +1,1 @@
+FROM gcr.io/tekton-releases/github.com/tektoncd/pipeline/cmd/pullrequest-init@sha256:720efdcc5f93fbbbf3c4e1662fece1a8c49eae1535227d694d9d419f173fecbb
