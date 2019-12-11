@@ -1,2 +1,4 @@
 FROM ubuntu:16.04
-RUN apt-get update && apt-get install -y git && git clone https://github.com/tensorflow/tensorflow.git 
+RUN apt-get update && apt-get install -y git \ 
+       && git clone https://github.com/tensorflow/tensorflow.git  \
+            && git checkout r2.0
