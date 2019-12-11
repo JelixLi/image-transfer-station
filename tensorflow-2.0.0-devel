@@ -1,1 +1,1 @@
-FROM gcr.io/tensorflow/tensorflow:v2.0.0-devel
+FROM gcr.io/tensorflow/tensorflow:2.0.0-devel
