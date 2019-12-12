@@ -1,1 +1,2 @@
-FROM gcr.io/tekton-releases/github.com/tektoncd/pipeline/cmd/creds-init@sha256:e787493e4e6b50e40922fc998ebe6f0beeb42b5ca57a5ca00a08abbc2de73a6f
+#FROM gcr.io/tekton-releases/github.com/tektoncd/pipeline/cmd/creds-init@sha256:e787493e4e6b50e40922fc998ebe6f0beeb42b5ca57a5ca00a08abbc2de73a6f
+FROM gcr.io/tekton-releases/github.com/tektoncd/pipeline/cmd/creds-init@sha256:c8544b7182b53608f7b71f42c31295d8bf534ceeed14be735977c7e289fd37b7
