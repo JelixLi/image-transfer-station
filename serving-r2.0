@@ -143,15 +143,6 @@ RUN echo "Building with Bazel options: ${TF_SERVING_BAZEL_OPTIONS}"
 
 RUN apt-get update && apt-get install -y --no-install-recommends python3-distutils-extra
 
-RUN ln -s /usr/local/cuda/lib64/stubs/libcuda.so /usr/local/cuda/lib64/stubs/libcuda.so.1 && \
-    LD_LIBRARY_PATH=/usr/local/cuda/lib64/stubs:${LD_LIBRARY_PATH} \
-    bazel build --color=yes --curses=yes --config=cuda --copt="-fPIC"\
-    ${TF_SERVING_BAZEL_OPTIONS} \
-    --verbose_failures \
-    --output_filter=DONT_MATCH_ANYTHING \
-    ${TF_SERVING_BUILD_OPTIONS} \
-    tensorflow_serving/model_servers:tensorflow_model_server 
-
 # Build and install TensorFlow Serving API
 RUN bazel build --color=yes --curses=yes \
     ${TF_SERVING_BAZEL_OPTIONS} \
