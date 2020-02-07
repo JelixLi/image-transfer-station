@@ -141,7 +141,8 @@ RUN echo "Building with build options: ${TF_SERVING_BUILD_OPTIONS}"
 ARG TF_SERVING_BAZEL_OPTIONS=""
 RUN echo "Building with Bazel options: ${TF_SERVING_BAZEL_OPTIONS}"
 
-RUN ln -s /usr/local/cuda/lib64/stubs/libcuda.so /usr/local/cuda/lib64/stubs/libcuda.so.1 && \
+RUN pip3 --no-cache-dir install future>=0.17.1 && \
+    ln -s /usr/local/cuda/lib64/stubs/libcuda.so /usr/local/cuda/lib64/stubs/libcuda.so.1 && \
     LD_LIBRARY_PATH=/usr/local/cuda/lib64/stubs:${LD_LIBRARY_PATH} \
     bazel build --color=yes --curses=yes --config=cuda --copt="-fPIC"\
     ${TF_SERVING_BAZEL_OPTIONS} \
