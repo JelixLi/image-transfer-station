@@ -149,9 +149,8 @@ RUN bazel build --color=yes --curses=yes \
     --verbose_failures \
     --output_filter=DONT_MATCH_ANYTHING \
     ${TF_SERVING_BUILD_OPTIONS} \
-    tensorflow_serving/tools/pip_package:build_pip_package && \
-    bazel-bin/tensorflow_serving/tools/pip_package/build_pip_package \
-    /tmp/pip && \
-    pip --no-cache-dir install --upgrade \
+    tensorflow_serving/tools/pip_package:build_pip_package 
+RUN bazel-bin/tensorflow_serving/tools/pip_package/build_pip_package /tmp/pip 
+RUN pip --no-cache-dir install --upgrade \
     /tmp/pip/tensorflow_serving_api_gpu-*.whl && \
     rm -rf /tmp/pip
