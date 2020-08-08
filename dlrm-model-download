@@ -1,0 +1,2 @@
+FROM camil/gsutil
+RUN gsutil cp -r gs://dmchen-data/dlrm_tf1_data/model_dir_0 /
