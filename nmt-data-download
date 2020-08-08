@@ -1,5 +1,5 @@
 FROM ubuntu:18.04
-RUN apt-get update && apt-get install curl 
+RUN apt-get update && apt-get install -y curl 
 RUN OUT_DIR="${1:-iwslt15}"
 RUN SITE_PREFIX="https://nlp.stanford.edu/projects/nmt/data"
 
