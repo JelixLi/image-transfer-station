@@ -1,0 +1,3 @@
+FROM ubuntu:16.04
+RUN apt-get update && apt-get -y install wget
+RUN wget https://dlrm.s3-us-west-1.amazonaws.com/models/tb0875_10M.pt
